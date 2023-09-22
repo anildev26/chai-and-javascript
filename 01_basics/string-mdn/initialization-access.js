@@ -25,7 +25,21 @@ console.log(name + " " + surname); // anil sahu
 console.log(`Hello My Name is ${name} and my surname is ${surname}`); //printing using backtick
 
 //OR
-console.log(studName); // while printing object  [String: 'Anil Sahu'] it wont print like "Anil Sahu"
+console.log(studName); // while printing object  [String: 'Anil Sahu'] it wont print like "Anil Sahu" but if we pass any other comment with it, the output will be string value
+console.log("Writing something before printing object (studName) : " +studName);
+
+//To print obj we can convert them to toString function using prototype or dot operator 
+
+console.log("Object Printing (studname) using toString : "+ studName.toString());
+//ex:
+const studName2 = new String('Rhishikesh Chaughule');
+
+console.log(studName2);
+// Expected output: String { "Rhishikesh Chaughule" }
+
+console.log("Object Printing (studName2) using toString : "+ studName2.toString());
+// Expected output: "Rhishikesh Chaughule"
+
 
 // *************************Character access*********************************
 
