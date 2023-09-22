@@ -24,3 +24,11 @@ console.log(newDate.toDateString()); // Wed Jul 26 2000
 // console.log(newDate.getUTCDay());  
 
 console.log(`My Birthday is on ${newDate.toLocaleDateString()}`); // My Birthday is on 7/26/2000 
+
+// We can edit our date format with the help of toLocal
+const dateLocale = newDate.toLocaleString('default', {
+    
+    weekday: "long" // wednesday
+
+})
+console.log(dateLocale);
