@@ -29,7 +29,6 @@ console.log(`Before Unshifting the element in ORIGINAL Array : ${arr1}`); // 1,2
 arr1.unshift("OMG")  // Added : OMG
 arr1.unshift("Akshay Movie") // Added : Akshay Movie, OMG
 
-
 console.log(`After using Unshift(Adding): ${arr1}`) // After using Unshift (Adding): Akshay Movie,OMG,1,2,3,true,Anil,4,5,gg
 
 // - Shift (Deleting the first elemtent from array)
