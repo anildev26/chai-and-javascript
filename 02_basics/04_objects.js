@@ -33,7 +33,7 @@ const regularUserInsta = {
 
 // Accessing Nested object
 
-// console.log(regularUserInsta);
+console.log(regularUserInsta);
 /**
 {
   instaUsername: 'fr0st_op',
@@ -47,7 +47,7 @@ const regularUserInsta = {
 
 console.log(regularUserInsta.instaUsername); // fr0st_op
 
-// console.log(regularUserInsta.instaBio); 
+console.log(regularUserInsta.instaBio); 
 /** 
     {
     dob: '26-07-2000',
@@ -68,7 +68,7 @@ const obj3 = {name: "Anil", surname: "Sahu", status: "Single"}
 // 1st Method - Object.assign(target, source); ---> object.assign(objName1, objName2, objName3) -- Not preferable, it returns an object
 
 const returnedObject = Object.assign({}, obj1, obj2,  obj3) // Here empty object is a target where all the source will be combined and store 
-// console.log(returnedObject);
+console.log(returnedObject);
 /*
 {
   '1': 'abc',
@@ -85,7 +85,7 @@ const returnedObject = Object.assign({}, obj1, obj2,  obj3) // Here empty object
 
 // 2nd Method - Spread Operator (...) 
 const spreadReturnedObject = {...obj1, ...obj2, ...obj3}
-// console.log(spreadReturnedObject); // return same output
+console.log(spreadReturnedObject); // return same output
 
 // 3rd Method --- MOST IMP When value come from database (.map loop or via indexing)
 
