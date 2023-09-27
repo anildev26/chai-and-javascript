@@ -1,7 +1,7 @@
 //objects
 
-// Singelton 
-//Object.create
+// Singelton [Explained on the part 2]
+//new Object [using constructor]
 
 // ******************Symbol - Declare and use in object***********************
 const mySym1 = Symbol("2023 is the worst year")
