@@ -144,4 +144,4 @@ console.log(Object.entries(tinderUser)); //each key value pair into array
 // Check if the object has specified value or not when the object data is really big and not possible to check manually
 // objectName.hasOwnProperty('key Name')  //Determines whether an object has a property with the specified name. Returns Boolean - True/False
 console.log(tinderUser.hasOwnProperty("isLoggedIn")); // true : value exist
-console.log(tinderUser.hasOwnProperty("surname")); // false : valued oesn't exist
+console.log(tinderUser.hasOwnProperty("surname")); // false : valued doesn't exist
