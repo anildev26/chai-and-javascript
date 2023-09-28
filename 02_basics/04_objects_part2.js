@@ -16,3 +16,26 @@ console.log(student); // Anil:  Easy way to represent
 const {student: learner} = course;
 
 console.log(learner); // Anil
+
+/*
+ * JSON FORMAT DATA Can be object or array type
+// Array type:
+[
+    {}, //obj1
+    {}, //obj2
+    {}, //obj3
+    {}  //obj4
+]
+
+//Object type:
+{
+    {
+        "name": "Anil",
+        "country": "India",
+        "price": "Free"
+    }, //obj1
+    {}, //obj2
+    {}, //obj3
+    {}  //obj4
+}
+ */
