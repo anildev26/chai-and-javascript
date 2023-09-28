@@ -16,7 +16,7 @@ const text = "Chrome"
 console.log(text.substring(2, 0))
 
 //negative ex: Negative lengths in substring() will clamp it to 0.
-console.log(text.substring( 4,-4))
+console.log(text.substring(4, -4))
 
 
 // ******************substr(start, length)************************

@@ -1,6 +1,6 @@
 // Objects ---- Part 2
 // Singleton --
-const tinderUser  =  new Object // Creating object using constructor - singleton
+const tinderUser = new Object // Creating object using constructor - singleton
 
 const fbUser = { // Creating object using object literal, Both are same just differenece is [literal - non singleton]
 
@@ -9,7 +9,7 @@ const fbUser = { // Creating object using object literal, Both are same just dif
 // Adding key value to object :
 tinderUser.id = "123abc"
 tinderUser.name = "SammyChat"
-tinderUser.isLoggedIn =  false
+tinderUser.isLoggedIn = false
 
 fbUser.fbName = "Anil Sahu"
 
@@ -19,8 +19,8 @@ console.log(fbUser); // { fbName: 'Anil Sahu' }
 // Nested Objects
 
 const regularUserInsta = {
-    instaUsername : "fr0st_op",
-    instaBio : {
+    instaUsername: "fr0st_op",
+    instaBio: {
         dob: "26-07-2000",
         status: "Life is unHappy",
         profileDetails: {
@@ -47,7 +47,7 @@ console.log(regularUserInsta);
 
 console.log(regularUserInsta.instaUsername); // fr0st_op
 
-console.log(regularUserInsta.instaBio); 
+console.log(regularUserInsta.instaBio);
 /** 
     {
     dob: '26-07-2000',
@@ -61,13 +61,13 @@ console.log(regularUserInsta.instaBio.profileDetails.following) // 425 ---> here
 
 
 //***************************Object combining/Merging************************************
-const obj1 = {1: "abc", 2: "qwerty", 3: "xyz"}
-const obj2 = {4: "qwerty", 5: "xyz", 6: "abc"}
-const obj3 = {name: "Anil", surname: "Sahu", status: "Single"}
+const obj1 = { 1: "abc", 2: "qwerty", 3: "xyz" }
+const obj2 = { 4: "qwerty", 5: "xyz", 6: "abc" }
+const obj3 = { name: "Anil", surname: "Sahu", status: "Single" }
 
 // 1st Method - Object.assign(target, source); ---> object.assign(objName1, objName2, objName3) -- Not preferable, it returns an object
 
-const returnedObject = Object.assign({}, obj1, obj2,  obj3) // Here empty object is a target where all the source will be combined and store 
+const returnedObject = Object.assign({}, obj1, obj2, obj3) // Here empty object is a target where all the source will be combined and store 
 console.log(returnedObject);
 /*
 {
@@ -84,7 +84,7 @@ console.log(returnedObject);
 */
 
 // 2nd Method - Spread Operator (...) 
-const spreadReturnedObject = {...obj1, ...obj2, ...obj3}
+const spreadReturnedObject = { ...obj1, ...obj2, ...obj3 }
 console.log(spreadReturnedObject); // return same output
 
 // 3rd Method --- MOST IMP When value come from database (.map loop or via indexing)

@@ -23,7 +23,7 @@ console.log("=== Operator : ", id === num) //False
 let heros = ["marvel", "dc", "SuperMan", "Batman"] //typeOf : Object
 
 //Function -->
-let myFunction = function(){ //typeOf : function
+let myFunction = function () { //typeOf : function
 
 }
 
@@ -34,4 +34,4 @@ const myObj = { //typeOf : object
     city: "Mumbai",
     sex: "Male"
 }
-console.log("abc: " ,typeof abc); // null = object
+console.log("abc: ", typeof abc); // null = object

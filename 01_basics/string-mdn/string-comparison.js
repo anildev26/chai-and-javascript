@@ -5,9 +5,9 @@ In other words, strings are compared letter-by-letter.*/
 
 // For example:
 
-console.log( 'Z' > 'A' ); // true
-console.log( 'Glow' > 'Glee' ); // true
-console.log( 'Be' > 'Bee' ); // false
+console.log('Z' > 'A'); // true
+console.log('Glow' > 'Glee'); // true
+console.log('Be' > 'Bee'); // false
 
 //------------- The algorithm to compare two strings is simple:----------
 

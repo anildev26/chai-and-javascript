@@ -1,6 +1,6 @@
 //functions
 // Syntax: 
-function functionName(){
+function functionName() {
     //Code to be executed
 }
 
@@ -11,10 +11,10 @@ functionName() // execution of the function
 
 // Example:- Function accepting parameters and ways to print the ans
 
-function addTwoNumbers(number1, number2){ // these are called "paramenters" and in javascript we dont need to mention the datatype for parameters
+function addTwoNumbers(number1, number2) { // these are called "paramenters" and in javascript we dont need to mention the datatype for parameters
     //how can we return the value or print the value
-    let result =  number1+number2
-    console.log("Result: ",result); // as we directly printing log inside function we just need to call the function and it will return result in console
+    let result = number1 + number2
+    console.log("Result: ", result); // as we directly printing log inside function we just need to call the function and it will return result in console
 }
 
 addTwoNumbers(5, 7) // Result: 12 ---> We need to pass the "Arguments" first over here while calling the function
@@ -41,9 +41,9 @@ addTwoNumbers(5, undefined) // Result:  NaN ---> Whole result is said to "Nan", 
 // ---------Checking on Strings passed with another different datatype----------
 
 // CASE 5: (String, null)
-addTwoNumbers(null,"Anil") // Result:  Anilnull ---> When String + null is passed it simply concatinates 
+addTwoNumbers(null, "Anil") // Result:  Anilnull ---> When String + null is passed it simply concatinates 
 // OR
-addTwoNumbers(null,"Anil") // Result: nullAnil ---> Simply Concatinated
+addTwoNumbers(null, "Anil") // Result: nullAnil ---> Simply Concatinated
 
 // CASE 6: (String, undefined)
 addTwoNumbers("Anil", undefined) // Result:  Anilundefined ---> Simply Concatinated
@@ -56,9 +56,9 @@ addTwoNumbers(undefined, "Anil") // Result:  undefinedAnil ---> Simply Concatina
 
 // Note: Any line of code written after "return" keyword in function is never executed
 
-function multiplyTwoNumber(num1, num2){
+function multiplyTwoNumber(num1, num2) {
     // directly using return statement with multiplication functionalities without any third variable
-    return num1*num2 // This line will only return the multiplied value to the function execution call, it won't print anything inside the console as there is no console log
+    return num1 * num2 // This line will only return the multiplied value to the function execution call, it won't print anything inside the console as there is no console log
 }
 
 multiplyTwoNumber(7, 9) // function exection with no output as function has returned the muptiplied output but we haven't stored it anywhere
@@ -66,18 +66,18 @@ multiplyTwoNumber(7, 9) // function exection with no output as function has retu
 // Storing the returned output in variable and printing it or directly calling the function execution inside console log which will print the result came inside function
 
 // third varible result:
-const result = multiplyTwoNumber (8, 5) 
-console.log("Multiplied value using third variable : ",result); // Multiplied value using third variable :  40
+const result = multiplyTwoNumber(8, 5)
+console.log("Multiplied value using third variable : ", result); // Multiplied value using third variable :  40
 
 // Directly using console.log(function execution)
 
-console.log("Multiplied value using console:",multiplyTwoNumber(9, 8)); // Multiplied value using console: 72
+console.log("Multiplied value using console:", multiplyTwoNumber(9, 8)); // Multiplied value using console: 72
 
 // ----------------------------------------------------------------------------------------------------------------------------
 
 // Assigning Default value to function argument when no parameter is passed, if parameter is passed to function then it will overwrite the default value
 
-function printMyName(name){
+function printMyName(name) {
     return `Hello ${name}, Welcome to Salesforce`
 }
 
@@ -86,7 +86,7 @@ console.log(printMyName()); // Hello undefined, Welcome to Salesforce ---> undef
 
 // To tackle such situation when blank function execution has happended we can assign default value to our function parameter
 // Re-Writing the same funtion here again with assigning default
-function printMyName(name = "Rhishikesh"){   // Now calling the empty function will print "Rhishikesh" name instead of "undefined"
+function printMyName(name = "Rhishikesh") {   // Now calling the empty function will print "Rhishikesh" name instead of "undefined"
     return `Hello ${name}, Welcome to Salesforce`
 }
 console.log(printMyName()); // Hello Rhishikesh, Welcome to Salesforce

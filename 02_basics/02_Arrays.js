@@ -54,7 +54,7 @@ console.log(mutualFriends);
 
 //**********************flat()*********************************************
 
-const num1 = [1,2,3,4,5, ["omkar", "pooja", "frost"],6,7,8, ["bob", "raj", "tom"], 7,8,7,2,[5,6,3],77]; // When you have multiple array inside another array we can simply put them in one single array
+const num1 = [1, 2, 3, 4, 5, ["omkar", "pooja", "frost"], 6, 7, 8, ["bob", "raj", "tom"], 7, 8, 7, 2, [5, 6, 3], 77]; // When you have multiple array inside another array we can simply put them in one single array
 const real_another_array = num1.flat(Infinity) //Over here inside flat we need to give them a depth  i.e till when it should check and combine but when unknown we can give "INFINITY"
 
 console.log(real_another_array);
@@ -80,7 +80,7 @@ console.log(Array.from("Anil")); // [ 'A', 'n', 'i', 'l' ]
 
 // [INTRESTING CASE FOR INTERVIEW]
 
-console.log(Array.from({ name: "Joee"})); // [] :- As we didn't mentioned what to be converted key as arrays or value as array (Later videos discuss how to do that)
+console.log(Array.from({ name: "Joee" })); // [] :- As we didn't mentioned what to be converted key as arrays or value as array (Later videos discuss how to do that)
 
 //****************************** When we need to convert set of argument/variable to array we use (Array.of(variable1, variable2, variable3)) *************************************
 
@@ -88,4 +88,4 @@ let score1 = 100;
 let score2 = 200;
 let score3 = 300;
 
-console.log(Array.of(score1, score2, score3)); [ 100, 200, 300 ]
+console.log(Array.of(score1, score2, score3));[100, 200, 300]
