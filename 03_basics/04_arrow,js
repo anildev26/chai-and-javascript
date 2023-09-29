@@ -1,6 +1,4 @@
-// --------------------------------------this keyword-------------------------------------------------
-
-// this - Only works with object, we can't use this in any function
+// this keyword - Only works with object, we can't use this in any function
 
 const user = {
     username: "Anil",
@@ -41,16 +39,16 @@ function chai() {
 
 // Ex: 2 ---> Printing any defined value using this keyword inside function block
 
-function chai2(){
+function chai2() {
     let username = "Anil"
     console.log(`${this.username}, Welcome to Chai 2`); // undefined, Welcome to Chai 2 = UNDEFINED ---> this keyword doesn't work when assigning the value in function it only works in object
 }
-chai2() 
+chai2()
 
 
-// ******************************************************************************************************************
 
 // -----------------------------------------this + Arrow Function-----------------------------------------------------------
+
 
 //  Kya upar vala code jisme function block me this hai vo as a arrow function me chalega - NO
 
@@ -71,8 +69,6 @@ const checkingThisInArrowFunction = () => {
 checkingThisInArrowFunction()
 
 
-
-// ******************************************************************************************************************
 
 // -----------------------------------------Pure Arrow Function------------------------------------------------------
 
