@@ -40,6 +40,10 @@ checkDb(); // Without semi-colon over here, it will give above error mentioned b
 // Passing parameters in arrow function and how to pass argument to that particular argument in function
 ((dbname) => {
     console.log(`DB connected to "${dbname}" with the help of parameterized arrow function`);
-})("MySQL") // Output: DB connected to "MySQL" with the help of parameterized arrow functio
+})("MySQL") // Output: DB connected to "MySQL" with the help of parameterized arrow function
+
+
+
+
 
 
