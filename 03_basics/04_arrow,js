@@ -19,14 +19,14 @@ const user = {
         */
     }
 }
-// user.welcomeMessage; // Blank No Output
+user.welcomeMessage; // Blank No Output
 
-// user.welcomeMessage() // Anil, Welcome to Chai aur JS course ---> Method hai so () se execute hoga and method ke andar already log statement hai to console.log ke andar likhne ki jarurat nahi.
+user.welcomeMessage() // Anil, Welcome to Chai aur JS course ---> Method hai so () se execute hoga and method ke andar already log statement hai to console.log ke andar likhne ki jarurat nahi.
 
-// // Now change the username and re-run the welcomeMessage method
-// user.username = "Vinayak"
+// Now change the username and re-run the welcomeMessage method
+user.username = "Vinayak"
 
-// user.welcomeMessage() // Vinayak, Welcome to Chai aur JS course 
+user.welcomeMessage() // Vinayak, Welcome to Chai aur JS course 
 
 // ------------------------------------------------------------------------------------------------------
 
@@ -41,11 +41,11 @@ function chai() {
 
 // Ex: 2 ---> Printing any defined value using this keyword inside function block
 
-// function chai2(){
-//     let username = "Anil"
-//     console.log(`${this.username}, Welcome to Chai 2`); // undefined, Welcome to Chai 2 = UNDEFINED ---> this keyword doesn't work when assigning the value in function it only works in object
-// }
-// chai2() 
+function chai2(){
+    let username = "Anil"
+    console.log(`${this.username}, Welcome to Chai 2`); // undefined, Welcome to Chai 2 = UNDEFINED ---> this keyword doesn't work when assigning the value in function it only works in object
+}
+chai2() 
 
 
 // ******************************************************************************************************************
