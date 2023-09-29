@@ -16,7 +16,7 @@
 // ------------------------------------------------------------------------------------------------------
 
 // This is normal function calling which we can do without iife
-function checkDb(){
+function checkDb() {
     console.log(`DB Connected`); // Output: DB Connected
 }
 checkDb(); // Without semi-colon over here, it will give above error mentioned below syntax
@@ -24,7 +24,7 @@ checkDb(); // Without semi-colon over here, it will give above error mentioned b
 // ------------------------------------------------------------------------------------------------------
 
 // With the use of iife, this function will look like this
-(function checkDb2(){
+(function checkDb2() {
     console.log(`DB Connected Two`); // Output: DB Connected Two
 })(); // Immediate calling with the help of iife
 
