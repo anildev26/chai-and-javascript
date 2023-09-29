@@ -31,7 +31,26 @@ function acceptingObject(anyObject){
     console.log(`My name is ${anyObject.username} and you have applied for "${anyObject.course}"`)
 }
 
-acceptingObject(user);
+acceptingObject(user); // My name is hitesh and you have applied for "code aur chai"
+
+// Directly passsing the object inside the function with the function execution:
+acceptingObject({
+    username: "Direct Aayush",
+    price: 10,
+    course: "chai aur react"
+}) //  Output: My name is Direct Aayush and you have applied for "chai aur react"
 
 
+// Passing Array in a functions "Array Brackets :-[]"
 
+const myNewArray = [200,56,854,36,777,58]
+
+function returnSecondValueOfArray(getarray){
+    return getarray[1] // Returning 2nd value from given array 
+}
+
+console.log(returnSecondValueOfArray(myNewArray)); // 56 --->
+
+// Directly passing the Array into the function with the function execution (Ab array ko variable me dalke pass krna ho vo kijiye ya direct pass kijiye
+
+console.log(returnSecondValueOfArray([77,89,56,4,9,7,5,46,463,1,8,56,])); // 89 ---> 2nd value from given array 
