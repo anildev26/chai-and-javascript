@@ -8,3 +8,9 @@ if(a>b) console.log(`executed`);
 // how to write if without parenthesis and more than 1 statement (using ",")
 
 if(a>b) console.log(`true`), console.log(`false`); // Both the log will be executed 
+
+// if else
+
+
+//checking condition using operators in if
+// <, >, <=, >=, ==, ===, !=, !==
