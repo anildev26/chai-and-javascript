@@ -54,7 +54,7 @@ let result2 = addNum(5, 6)
  * // Ab function ka kuch execution bacha nahi hai qki uska pura defination to hamne Memory phase me dal dia to iska kuch execute nhi hoga
  * // Ab next line me result ke andar ky jana tha addNum but addNum to function hai tb ye addNum ky karta hai apna ek alag execution context banata hai
  * Yaha pe ye khudka ek new executional context bana leta hai and iske andar ky ky hoga
- * addNum ---> |------------------|
+ * addNum --->  __________________
  *             |                  | <---New Variable enviroment
  *             |                  |
  *             |                  |
@@ -62,7 +62,8 @@ let result2 = addNum(5, 6)
  *             |                  |
  *             |                  |
  *             |                  | <---Execution Thread
- *             |------------------|   
+ *             |__________________|  
+ *  
  * Note: Jitni bar ye function create hota hai utni bar hamare liye ye function new executional context (ye naya box) create hota hai
  * Qki ab vapis se new execution context create hua hai to isme bhi vo 2 kam start se hoga 1) Memory Creation phase 2) Execution Phase -->ye exeute hoga addNum ke liye
  * 
@@ -70,7 +71,7 @@ let result2 = addNum(5, 6)
  * val1 -> undefined
  * val2 -> undefined
  * total -> undefined
- * 
+ * ________________
  * addNum ---> Execution Context
  * num1 <- 10
  * num2 <- 5
