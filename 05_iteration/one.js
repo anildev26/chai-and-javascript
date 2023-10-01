@@ -1,17 +1,36 @@
 // for loop
 
 //Printing Tables 1 - 10
-// for (let i = 1; i <=10; i++) {
-//     console.log(`Table of ${i} :`);
-//     for(let j=1; j<=10; j++){
-//         console.log(`${i} * ${j} = ${i*j}`);
-//     }
-//     console.log("-------------------");
-// }
+for (let i = 1; i <=10; i++) {
+    console.log(`Table of ${i} :`);
+    for(let j=1; j<=10; j++){
+        console.log(`${i} * ${j} = ${i*j}`);
+    }
+    console.log("-------------------");
+}
 
-// //usage of break and continue
+// Evaluating over Array :
+let myArray = ["mango", "apple", "cherry", "strawberry"]
+let arrayLenth = myArray.length //  Array Length : 4
+console.log(`Array Length : ${arrayLenth}`);
+for (let index = 0; index < myArray.length; index++) {
+    const element = myArray[index];
+    console.log(`Value at array index ${index} is --> ${element}`);
+}
+// Array Output : 
+/*
+Array Length : 4
+Value at array index 0 is --> mango
+Value at array index 1 is --> apple
+Value at array index 2 is --> cherry
+Value at array index 3 is --> strawberry
+*/
 
-//Break: once a condition is true, break will directly come out of loop and not executing any other line after break statement (That loop or whole nested loop is terminated)
+
+// ----------------------------------------------------------------------------------------------------
+// break and continue
+
+// Break: once a condition is true, break will directly come out of loop and not executing any other line after break statement (That loop or whole nested loop is terminated)
 
 // Continue: once condition become true and continue statement comes anything before continue will be executed but after reaching continue that perticular iteration will be skipped for that loop
 
@@ -34,8 +53,9 @@ Value of i is : 4
 5 Spotted  // After Break statement loop directly came to line 26 which is the end of the loop
 */
 
+// ----------------------------------------------------------------------------------------------------
 
-//continue Example :
+// continue Example :
 for(let i = 1; i<=10; i++){
     if(i == 5){
         console.log("5 Spotted");
