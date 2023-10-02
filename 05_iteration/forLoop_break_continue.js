@@ -1,10 +1,10 @@
 // for loop
 
 //Printing Tables 1 - 10
-for (let i = 1; i <=10; i++) {
+for (let i = 1; i <= 10; i++) {
     console.log(`Table of ${i} :`);
-    for(let j=1; j<=10; j++){
-        console.log(`${i} * ${j} = ${i*j}`);
+    for (let j = 1; j <= 10; j++) {
+        console.log(`${i} * ${j} = ${i * j}`);
     }
     console.log("-------------------");
 }
@@ -36,8 +36,8 @@ Value at array index 3 is --> strawberry
 
 // break example:
 
-for(let i = 1; i<=10; i++){
-    if(i == 5){
+for (let i = 1; i <= 10; i++) {
+    if (i == 5) {
         console.log("5 Spotted");
         break
     }
@@ -56,8 +56,8 @@ Value of i is : 4
 // ----------------------------------------------------------------------------------------------------
 
 // continue Example :
-for(let i = 1; i<=10; i++){
-    if(i == 5){
+for (let i = 1; i <= 10; i++) {
+    if (i == 5) {
         console.log("5 Spotted");
         continue
     }
