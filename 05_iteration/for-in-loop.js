@@ -7,15 +7,15 @@
 
 // OBJECT 
 const myObject = {
-    saheb : "Rhishikesh",
-    vinu : "Vinayak",
-    affu : "afreen",
-    vaibha : "vaibhav"
+    saheb: "Rhishikesh",
+    vinu: "Vinayak",
+    affu: "afreen",
+    vaibha: "vaibhav"
 }
 
 
 // Only printing keys
-for(const key in myObject){
+for (const key in myObject) {
     console.log(key);
 }
 /*
@@ -27,7 +27,7 @@ vaibha
 
 // Printing both key and value pair
 
-for(const key in myObject){
+for (const key in myObject) {
     console.log(`${key} full Name is : ${myObject[key]}`);
 }
 /*
@@ -42,10 +42,10 @@ vaibha full Name is : vaibhav
 //Array
 
 const myArray = ["Mike", "Steve", "Donna", "Louis", "Pearson"]
-for(const key in myArray){
+for (const key in myArray) {
     console.log(key); // prints the index of myArray
     console.log(myArray[key]); // prints the value of array with those index
-} 
+}
 /* 
 //--------------------
 Output: console.log(key); // prints the index of myArray  
@@ -69,10 +69,10 @@ Pearson
 // In Strings (Only key represents the index of myString)
 
 const myString = "Hello world"
-for(const key in myString){
+for (const key in myString) {
     console.log("String output:");
     console.log(myString[key]);
-    
+
 }
 
 //------------------------------------Map Cannot be iterated using "FOR IN" loop-------------------------------------------------
@@ -88,7 +88,7 @@ myMap.set(5, "Zee5")
 myMap.set(6, "Sony Liv")
 
 
-for(const key in myMap){ // No output in console
+for (const key in myMap) { // No output in console
     console.log("Working?"); // As we cannot iterate over map this line never get print
     console.log(key); // Same as above
 }
