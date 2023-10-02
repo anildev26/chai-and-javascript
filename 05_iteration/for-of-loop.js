@@ -2,8 +2,8 @@
 // Advantage : It directly prints the value of array, string in log(key), but for-in loop prints index for array, string etc
 
 // Iterating over an Array
-const myArray = [7,2,3,4]
-for (const value of myArray){
+const myArray = [7, 2, 3, 4]
+for (const value of myArray) {
     console.log(`Value of array is:  ${value}`);
 }
 /*
@@ -16,8 +16,8 @@ Value of array is:  4
 // Iterating over an String
 
 const myString = "Hello World"
-for(const ch of myString){
-    if(ch == " "){
+for (const ch of myString) {
+    if (ch == " ") {
         console.log("Blank space spotted and removed");
         continue // ignore the blank space in string and jump to next iteration
     }
@@ -52,9 +52,9 @@ myMap.set(8, "Sanika")
 myMap.set(10, "Afreen")
 
 //Simply printing of map where each key value pair is printed separetly
-for( const mValue of myMap){
+for (const mValue of myMap) {
     console.log(mValue); // this will print each key value pair in the form of an individual array [ 1, 'Anil' ] [ 2, 'Vaibhav' ]
-} 
+}
 
 /*
 Output:
@@ -68,8 +68,8 @@ Output:
 
 // Map iterating over key or value
 
-for(const [key,value] of myMap){
-    console.log(key+  ":- "+ value);
+for (const [key, value] of myMap) {
+    console.log(key + ":- " + value);
 }
 
 /*
