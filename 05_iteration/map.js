@@ -3,10 +3,10 @@
 
 // map on numbers 
 
-const myNums = [4,6,95,6,4,7,8,5,2,2,4,74,12]
+const myNums = [4, 6, 95, 6, 4, 7, 8, 5, 2, 2, 4, 74, 12]
 
-const numData = myNums.map( (num) => num*100 )
-console.log(numData); 
+const numData = myNums.map((num) => num * 100)
+console.log(numData);
 /*
 [
     400, 600, 9500,  600,
@@ -20,7 +20,7 @@ console.log(numData);
 
 // Chaining "map().map().filter()" // filter().map().filter()
 
-const numChaining = myNums.map( (num) => num*3 ).map( (num)=> num - 5 ).filter( (num) => num<10 )
+const numChaining = myNums.map((num) => num * 3).map((num) => num - 5).filter((num) => num < 10)
 console.log(numChaining);
 /*
 [
