@@ -25,7 +25,7 @@ const myNums = [7, 6, 9, 8, 4, 12, 2, 0, 3, 7, 9, 6, 5, 4, 1, 3, 44]
 const greterNum = myNums.filter((num) => {
     return num > 10
 })
-
+ 
 console.log(greterNum); // [ 12, 44 ]
 
 // Filter on book array
