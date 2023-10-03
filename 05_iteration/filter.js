@@ -11,6 +11,7 @@ console.log(arrayValues); // undefined :- coz foreach doesn't return any value
 
 // Filter : in call back funtion it requires condition and based on that condition it will return the value
 
+// IMPLICT - EXPLICIT Return 
 // NOTE : 1) Whenever we used { } while defining function then we are also telling function scope so we need to return the function value through "return statement" inside curly braces
 //        2) When executing the condition on same line without curly braces { } we don't need to use return, it will automatically return the resultant value based on the condition to that variable            
 
