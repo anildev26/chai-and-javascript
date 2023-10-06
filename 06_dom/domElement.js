@@ -104,3 +104,5 @@ myConvertedCollectionArray.forEach( (eachLiItem) => {
     eachLiItem.style.color = "red"
 })
 // Successfully worked all the li tag text got converted to red in html page
+
+//-----------Now Practise these all commands in wiki page---------------- 
