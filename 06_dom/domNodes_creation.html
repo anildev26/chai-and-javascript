@@ -16,7 +16,44 @@
 </body>
 <script>
     const parentDiv = document.querySelector(".parent")
-    console.log(parentDiv);
+    // console.log(parentDiv);
+    // console.log(parentDiv.children); // Gives html collection inside parentDiv --->  Similar to array
+    // console.log(parentDiv.children[1].textContent); // February
+
+    // classic for loop can be used to run htmlCollection
+    for (let i = 0; i < parentDiv.children.length; i++) {
+        console.log(parentDiv.children[i].textContent);
+        parentDiv.children[i].style.color = "blue"
+        
+    }
+    console.log(parentDiv.firstElementChild); //prints the first children element --> Interesting property
+    // <div class="day" style="color: blue;">January</div>
+
+    console.log(parentDiv.lastElementChild);
+    // <div class="day" style="color: blue;">May</div>
+
+    //---------------------------------------------------------------------------------------------------------------
+
+    // Till above we discussed how we can traverse from parent to child element but now lets see how we can go from child to parent
+
+    const firstDay = document.querySelector(".day")
+    console.log(firstDay); // <div class="day" style="color: blue;">January</div>
+
+    // Now as we know the child element we can target its parent using ---parentElement Tag---
+    console.log(firstDay.parentElement);
+    /* Output:
+    <div class="parent">
+        <div class="day" style="color: blue;">January</div>
+        <div class="day" style="color: blue;">February</div>
+        <div class="day" style="color: blue;">March</div>
+        <div class="day" style="color: blue;">April</div>
+        <div class="day" style="color: blue;">May</div>
+    </div>
+    */
+
+    console.log(firstDay.nextElementSibling); // mtlb bhai to obvious si bat hai monday ka bhai tuesday and hame firstday use kia jo ki monday- bhai hai
+
+    console.log("Nodes :",parentDiv.childNodes);
 
 </script>
 </html>
