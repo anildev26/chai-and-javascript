@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Div creation and adding on DOM</title>
+</head>
+
+<body style="background-color: #212121; color: aliceblue;">
+    <p>Sup</p>
+</body>
+<script>
+    const mydiv = document.createElement("div")
+    mydiv.className = "div1"
+    mydiv.id = "first-div"
+    mydiv.style.backgroundColor = "green"
+    mydiv.setAttribute("nickname", "divdiv")
+    console.log(mydiv);
+
+    mydiv.style.padding = "15px"
+    mydiv.style.borderRadius = "20px"
+    mydiv.style.color = "blue"
+    // There are two ways to write text in div from javascript, the direct method overwrite the text present in div already and it fetches the alredy present text then overwrite then send the response
+    // which takes more processing. the another way is to create a separate text node and then add the text node using  (div.appendChild)
+    // 1st way
+    mydiv.innerText = "Hello from Chai and Anil"
+
+    // 2nd way
+    const mytext = document.createTextNode("Hello from 2nd Method")
+    mydiv.appendChild(mytext) // Hello from Chai and AnilHello from 2nd Method --> added the new text without overwriting the present text
+
+    // checking what 1st way do, if we use direct method on already present text in div
+    mydiv.innerText = "Is it overwriting old text ?" // Is it overwriting old text ? ---> it overwrited the whole text and replaced with the new one from direct method
+    document.body.appendChild(mydiv)
+</script>
+
+</html>
