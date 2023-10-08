@@ -3,8 +3,8 @@
 document.getElementById("idName") = innerHTML("Hello")
 
 
-// How to fetch the text element from page
-<h1 id = "title" class = "title">Dom Elements in JavaScript <span style = "display : none;">this is test span</span> </h1>
+    // How to fetch the text element from page
+    < h1 id = "title" class = "title" > Dom Elements in JavaScript < span style = "display : none;" > this is test span</span > </h1 >
 
 const title = document.getElementById("title")
 title.style.backgroundColor = 'red';
@@ -41,12 +41,12 @@ document.querySelector('#t4id') // fetches the info by using id Name and we we d
 document.querySelector('input') // It will return the first input tag in html file but we can also specify what kind of input we are looking for ex:
 // <input type="password" name="" id="">  || It was selected because it was the first input tag in html file
 
-document.querySelector('input[type="password"]') 
+document.querySelector('input[type="password"]')
 // <input type="password" name="" id=""> || We specifed here for what type of input tag we are looking for and we got the result
 
 //OR
 
-document.querySelector('input[type="color"]') 
+document.querySelector('input[type="color"]')
 // <input type="color" name="" id=""> || As we specifying the type for which we are looking for is color we got color input type output
 
 // ----------------------------------------------------------------------------------------------
@@ -82,7 +82,7 @@ myAllLi[1].style.backgroundColor = "red"    // Color red applied
 
 // Another method of doing this is using foreach
 
-myAllLi.forEach( (eachLi) => {
+myAllLi.forEach((eachLi) => {
     eachLi.style.color = "green"
 })
 // Successfully worked all the text in List are changed to green
@@ -100,7 +100,7 @@ myCollectionData // HTMLCollection(4) [li.list-item, li.list-item, li.list-item
 // Now converting into an array
 const myConvertedCollectionArray = Array.from(myCollectionData) // [li.list-item, li.list-item, li.list-item, li.list-item] --> Array
 // Using foreach to loop over array elements and change the value in html
-myConvertedCollectionArray.forEach( (eachLiItem) => {
+myConvertedCollectionArray.forEach((eachLiItem) => {
     eachLiItem.style.color = "red"
 })
 // Successfully worked all the li tag text got converted to red in html page
