@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit and Remove elements in dom</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    <ul class="language">
+        <li>Python</li>
+    </ul>
+</body>
+<script>
+
+    //----------------------------------------------------------------------------------------------
+    // Now we need to add multiple languages inside list 
+
+    // ----Normal function---- not optimised bcoz we will add element in the list using already defined methods bcoz of that
+    // if list hai 1000 already elements in it, the new element need to traverse from start to end to enter the next element
+    function addLanguage (langName){
+        // first step is to create html element we need to add in dom
+        const li = document.createElement("li") 
+        li.innerHTML = langName // Name added to Created element li 
+
+        // Now we need to push this li to dom inside its parent node
+        document.querySelector(".language").appendChild(li)
+        
+        // Now we have fetched the ul and added new li in it, but its just function defination now we need to cal the 
+        // funtion and pass the argument to it.
+    }
+    addLanguage("React")
+    addLanguage("PHP")
+    addLanguage("TypeScript")
+
+    // ----Optimized function-----
+    function addOptiLanguage (langName){
+        const li = document.createElement("li")
+        // Now we can create text node and store it in variable or we can directly append the text node in parent
+        li.appendChild(document.createTextNode(langName))
+        document.querySelector(".language").appendChild(li)
+
+        // Now we need to call the function with the parameter
+    }
+    addOptiLanguage("HTML")
+    addOptiLanguage("CSS")
+    addOptiLanguage("Data Structure")
+
+    //----------------------------------------------------------------------------------------------
+
+    // Edit_Dom element [2 ways - unoptimised/optimised]
+
+    // 1st way - unoptimised
+    const thirdLiUnoptimised = document.querySelector("li:nth-child(3)")
+    thirdLiUnoptimised.innerHTML = "Anil" // Successfully printed on third li
+    // OR
+    thirdLiUnoptimised.outerHTML = "<li>kamlesh dun dun dun</li>" // We need to give full html for outer html tag
+    
+    // 2nd way - Optimised
+    const secondLi = document.querySelector("li:nth-child(2)")
+    console.log(secondLi); // <li>React</li>
+
+    const newLi = document.createElement("li")
+    newLi.textContent = "Mojo"
+    secondLi.replaceWith(newLi) // now changed to mojo
+
+</script>
+</html>
