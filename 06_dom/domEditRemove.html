@@ -63,5 +63,26 @@
     newLi.textContent = "Mojo"
     secondLi.replaceWith(newLi) // now changed to mojo
 
+    //----------------------------------------------------------------------------------------------
+
+    // Deleting Dom element
+    /*
+    Python
+    Mojo
+    kamlesh dun dun dun
+    TypeScript
+    HTML
+    CSS
+    Data Structure
+    */
+
+    // lets delete Data structure and css
+    const myCss = document.querySelector("li:nth-child(6)")
+    // console.log(myCss); CSS
+    myCss.remove() // successfully Deleted
+
+    const myDS = document.querySelector("li:last-child")
+    myDS.remove() // successfully Deleted
+
 </script>
 </html>
