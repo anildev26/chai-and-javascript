@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Understanding Events</title>
+</head>
+<body style="background-color: #333333; color: #fff;">
+    <p>Amazing Pictures</p>
+    <div>
+        <ul id="images">
+            <li><img src="https://images.pexels.com/photos/17307123/pexels-photo-17307123/free-photo-of-pink-flowers-on-meadow.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="plants" id="plant" width="200px"/></li>
+            <li><img src="https://images.pexels.com/photos/15265573/pexels-photo-15265573/free-photo-of-woman-in-pink-clothes.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="human" id="human" width="200px" onclick="alert('You clicked an human')" /></li>
+            <li><a style="color: #fff;" id="youtube" href="https://www.youtube.com/">Youtube</a></li>
+            <li><img src="https://images.pexels.com/photos/18057622/pexels-photo-18057622/free-photo-of-raspberry-cheesecake.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="cake" id="cake" width="200px"/></li>
+            <li><img src="https://images.pexels.com/photos/18152871/pexels-photo-18152871/free-photo-of-fallow-deer-in-a-field.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="animal" id="animal" width="200px"/></li>
+            <li><img src="https://images.pexels.com/photos/18704651/pexels-photo-18704651/free-photo-of-altin-duvak-moda.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="dress" id="dress" width="200px"/></li>
+            
+        </ul>
+    </div>
+</body>
+<script>
+    // Padhna ky kya hai events me
+    // type, timestamp, preventDefault
+    // target, toElement, srcElement, currentTarget
+    // Interview perspeective --> clientX, clientY, screenX, screenY
+    // altKey, ctrlKey, shiftKey (koi key press hui hai ki nahi check krna), keyCode (keyboard speed kiski kitni hai )
+
+    // ---------------------------------------------------------------------------------------------------------------------
+
+    // Different Ways to write event handlers or listeners
+    // 1) Embed onclick event inside html tag.  [ onclick="alert('You clicked an human')" ]
+    // 2) Using onClick event in javascript : but it doesn't provide propagation and much functionalited with compare to addeventListener
+    document.getElementById('animal').onclick = function(){
+        alert('You clicked an Animal here')
+    }
+    // 3) Using addEventListeners in Js : It can listen to multiple types of events such as mouse, keyboard, drag & drop
+    // 4) attackEvent() :- Used in earlier times when application was used to run in Internet Explorer
+    // 5) jQuery - onEventListener
+    
+    // 3)
+    document.getElementById('plant').addEventListener('click', function(e){
+        // alert('plants clicked')
+        console.log(e);
+    }, false)
+    // 3rd paramenter in addEventListener is set to default as a False (which default is also known event Bubbling ) ----> 
+    // Event Propogation : 
+    // 1) Event Bubbling
+    // 2) Event Capturing (changing it to "true")
+    
+    // ---------------------------------------------------------------------------------------------------------------------
+    // Ex: How event propagation work and how we can stop it
+    document.getElementById('images').addEventListener('click', function(e){
+        console.log("Clicked inside the ul(parent)");
+    }, false)
+
+    document.getElementById('cake').addEventListener('click', function(e){
+        console.log("Cake Clicked");
+        e.stopPropagation()
+    }, false)
+    // Important thing here is, konsi vali activity kab click hogi : jab bhi koi element ul ke andar click hoga ul chalega but jab cake click hoga to pehle vo chalega badme ul coz
+    // its bubbling, bubble goes from down to up which means pehle vo khud ka event run krega bad me parent ka yaha par ek or cheej ati hai capturing mode jiske liye ham 3rd parameter ko default false
+    // se hatake true krdenge to ab ye top se bottom work krega mtlb pehle parent event run hoga fir child ka -->  
+    // Jab ham event ki bubbling nahi chahte taki inner element ka script alag reh jaye and parent ki script run na ho and outer element alag reh jaye
+    // 1) e.stopPropogation() [Jab event ka 3rd paramenter default(false) set ho and ham nahi chahte ki bubbling ho]isko aagar ap execute krdenge to ab apka event bubble hoke upar ke parent pe nahi jayega
+    // 2) e.preventDefault() koi bhi submitted work ko rokna (ex: form submission)
+    
+    document.getElementById('youtube').addEventListener('click', function(e){
+        console.log("Link clicked");
+        e.preventDefault() // worked link is not redirecting to yt
+    }, false)
+    
+    // ---------------------------------------------------------------------------------------------------------------------
+
+    // We clicked an image and it should vanish
+
+    document.getElementById('images').addEventListener('click', function(e){
+        console.log(e.target.tagName);
+
+        if(e.target.tagName == "IMG"){ // using condition so it only deleted images not anything else
+            console.log(e.target.id);
+            let removeELement = e.target.parentNode
+            removeELement.remove()
+        }
+        
+    }, false)
+    // Another Way of deleting
+    //removeELement.parentNode.removeChild(removeELement)
+
+</script>
+</html>
