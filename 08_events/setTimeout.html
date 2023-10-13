@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async</title>
+</head>
+<body style="background-color: #414141; color: #fff;">
+    <h1>Trying out 38 video on List</h1>
+    <button id="stop">stop</button>
+</body>
+<script>
+
+// -------------------------------------------------------------------------------
+
+// Setting Timout and changing dom value in every 2s
+const changeMe = setTimeout(function(){
+    document.querySelector('h1').innerHTML = "This is Timeout"
+}, 2000) // Another way of doing this is by passing reference to setTimeout (Shown Below)
+
+// Clearing timeout on specific action 
+document.querySelector('#stop').addEventListener('click', function(){
+    clearTimeout(changeMe)
+    console.log('Stopped bcoz clicked on button');
+})
+
+// -------------------------------------------------------------------------------
+// Passing reference to setTimouts
+
+const sayVinu = function(){ // Create a function and store it inside variable and then pass the referece to that variable inside setTimout
+    console.log("Hey, this is Vinayak here..Good to see you");
+}
+
+setTimeout(sayVinu,2000)
+
+// I have not created clearTimeout here but method is same like above
+
+// clearTimeout requires the reference to setTimout so it gets to know which setTimeout out of others, I am pointing to be stopped so to have reference of that setTimout we need to store it in variable and later pass that variable in clearTimout.
+
+
+</script>
+</html>
