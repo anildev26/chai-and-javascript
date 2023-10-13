@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript</title>
+</head>
+<body style="background-color: #414141; color: #fff;">
+    <h1>My name is Anil Sahu</h1>
+    <button id="start">start</button>
+    <button id="stop">stop</button> <br/><br/>
+
+    <button id="thirdParameter">Printing Names with 3rd parameter</button>
+    <button id="thirdStopper">Stopper for new Argument</button>
+</body>
+<script>
+    // Understanding setInterval and clearInterval
+    // syntax: setInterval(functionCall, timer, 3rd parameter) --> Ex: 2 [Below]
+
+    //Without 3rd Parameter
+
+    let interval_Id; // Defining the setInterval variable here because it need to be present in global scope so that clearInterval can access the variable, by declaring inside the event listener funtion... clear interval will never work
+
+    const printAnil = document.querySelector('#start').addEventListener('click',function(){
+         interval_Id = setInterval(function(){
+            console.log("Anil",  Date.now());
+            document.querySelector('h1').innerHTML = `Grinding + ${Date.now()}`
+        }, 1000)
+    })
+    
+
+    // clearInterval ---> requires the reference to setInterval so it gets to know which setInterval out of others, I am pointing to be stopped. so to have reference of that setTimout we need to store it in variable and later pass that variable in clearInterval.
+    
+    const stopPrint = document.querySelector('#stop').addEventListener('click',function(){
+        console.log("Stopping Anil + Date printing");
+        clearInterval(interval_Id)
+        document.querySelector('h1').innerHTML = `Finally it stopped`
+
+    })
+
+    // -------------------------------------------------------------------------------
+    //Ex : 2 Trying with 3rd parameter
+
+    const third_button = document.querySelector('#thirdParameter')
+    const stop3rd = document.querySelector('#thirdStopper')
+    let mythird;
+
+    const sayName = (value) => {
+        console.log(value, Date.now());
+    }
+
+    third_button.addEventListener('click', function(){
+        console.log("Start hone vala hai");
+        mythird = setInterval(sayName, 2000, "IDK" ) //syntax: Passing reference, Timer, third argument which will be accepted by function we passed as an reference
+    })
+
+    stop3rd.addEventListener('click',function(){
+        console.log("so, I'm Stopping");
+        clearInterval(mythird)
+    })
+
+</script>
+</html> 
