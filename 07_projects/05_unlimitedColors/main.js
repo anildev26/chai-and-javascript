@@ -23,10 +23,6 @@ const randomColor = function () {
     intervalId = null; // Edge case for memory usage, after clearing interval rewrite the intervalId to null and later check, if its null == false then use setInterval on it
   };
   
-  document
-    .querySelector('#start')
-    .addEventListener('click', startChangingPageColor); // Taking dom "Start" button reference
-  document
-    .querySelector('#stop')
-    .addEventListener('click', stopChangingPageColor); // Taking dom "Stop" button reference
+  document.querySelector('#start').addEventListener('click', startChangingPageColor); // Taking dom "Start" button reference
+  document.querySelector('#stop').addEventListener('click', stopChangingPageColor); // Taking dom "Stop" button reference
   
