@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Understanding XML Api</title>
+</head>
+<body style="background-color: #212121; color: #fff">
+
+<!-- XMLHttpRequest: readyState property
+
+Value	State	            Description 
+1	    OPENED	            open() has been called.
+2	    HEADERS_RECEIVED	send() has been called, and headers and status are available.
+3	    LOADING	            Downloading; responseText holds partial data.
+4	    DONE	            The operation is complete.
+-->
+    
+</body>
+<script>
+    const xhr = new XMLHttpRequest() // Creating object of XMLHttpRequest
+    const myRequestApi = 'https://api.github.com/users/anildev26' // Api from which we need to extract data
+
+    xhr.open('GET', myRequestApi) // Open : Asking our object to GET data from give Api url ---> It won't work until we call xhr.send which sends the data and get the headers and etc data
+
+    xhr.onreadystatechange = () => { // onreadystatechange will keep monitoring and printing the changing of states after requesting data from given url, state numbers and thier info is given above
+
+        const apiData = xhr.responseText 
+        console.log(xhr.readyState);
+        if(xhr.readyState === 4){
+            console.log("Api Data Received");
+            console.log(typeof apiData); // Most of the time jab bhi api request se response ata hai to vo String type me ata hai, to use objectName.dataname krke access krna muskil rehta hai isliye pehle ham use object me create krenge. 
+            // JSON.parse is similar to changing data into json format or object, directly we cant change data using "Object" Keyword
+        }
+        
+    }
+    xhr.send()
+    console.log("here");
+</script>
+</html>
