@@ -107,3 +107,35 @@ myPromiseFour
 
 
 // -----------------------------------------------------------------------------------------------------------------------
+// Promises with then catch or you can use [async await] --> here we can handle object children using dot operator without chaining response (.then)
+
+// async - await Cons: Directly error handles nahi krte we can handle error by wrapping inside try and catch block
+
+// Creating promise is same like all, but handling them is done with async awai function and later calling that function to run 
+
+const myPromiseFive = new Promise((resolve, reject)=>{
+    setTimeout(() => {
+        let myErr = true;
+        if (!myErr) {
+          // Read like this --> if not an error runs this block
+          resolve({ githubUsername: "Rhishikesh12", subscription: "Free" });
+        } else {
+            reject ("Error: Finding Git user")
+        }
+      }, 1000);
+})
+
+
+
+async function handlePromiseFive (){ // we need to call this function in order to run the promise
+    try {
+        const response = await myPromiseFive // Here resolve passed object is fetched and stored in variable
+        console.log(response); // { githubUsername: 'Rhishikesh12', subscription: 'Free' }
+
+        // From personal research we dont need chaining here, we can access object data with dot (.) operator in asynch and await
+        console.log(`Owner name : ${response.githubUsername} and subscription : ${response.subscription}`); //Owner name : Rhishikesh12 and subscription : Free
+    } catch (error) {
+        console.log(error); // Error: Finding Git user --> When promise got rejected due to if statement
+    }
+}
+handlePromiseFive()
