@@ -4,9 +4,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Understanding XML Api</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-<body style="background-color: #212121; color: #fff">
+<style>
+.card {
 
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin: auto;
+  text-align: center;
+}
+
+.title {
+  color: grey;
+  font-size: 18px;
+}
+
+button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+a {
+  text-decoration: none;
+  font-size: 22px;
+  color: black;
+}
+
+button:hover, a:hover {
+  opacity: 0.7;
+}
+</style>
+<body>
 <!-- XMLHttpRequest: readyState property
 
 Value	State	            Description 
@@ -15,12 +52,24 @@ Value	State	            Description
 3	    LOADING	            Downloading; responseText holds partial data.
 4	    DONE	            The operation is complete.
 -->
-    
+<!-- ---------------------------------------------ASSIGNMENT PROFILE CARD------------------------------------------------------- -->
+<!-- Add icon library -->
+<div class="card">
+  <img src="img.jpg" alt="name" style="width:100%">
+  <h1>John Doe</h1>
+  <p class="title">CEO & Founder, Example</p>
+  <p class="username">Harvard University</p>
+  <a href="https://twitter.com/AnilSahuDev"><i class="fa fa-twitter"></i></a>
+  <a href="https://www.linkedin.com/in/anilsahu1/"><i class="fa fa-linkedin"></i></a>
+  <a href="https://github.com/anildev26"><i class="fa fa-github"></i></a>
+  <p><button>Contact</button></p>
+</div>
 </body>
 <script>
+    
     const xhr = new XMLHttpRequest() // Creating object of XMLHttpRequest
     const myRequestApi = 'https://api.github.com/users/anildev26' // Api from which we need to extract data
-
+    let data;
     xhr.open('GET', myRequestApi) // Open : Asking our object to GET data from give Api url ---> It won't work until we call xhr.send which sends the data and get the headers and etc data
 
         xhr.onreadystatechange = () => { // onreadystatechange will keep monitoring and printing the changing of states after requesting data from given url, state numbers and thier info is given above
@@ -31,7 +80,7 @@ Value	State	            Description
 
                 // Converting to object coz accessign String attributes is hard then accessing object attributes with dot operator
 
-                const data = JSON.parse(xhr.responseText) // OBJECT --> As its giving object response we can fetch attributes of it
+                data = JSON.parse(xhr.responseText) // OBJECT --> As its giving object response we can fetch attributes of it
 
                 console.log("Api Data Received");
                 console.log(typeof apiData); // STRING --> Most of the time jab bhi api request se response ata hai to vo String type me ata hai, to use objectName.dataname krke access krna muskil rehta hai isliye pehle ham use object me create krenge. 
@@ -40,10 +89,26 @@ Value	State	            Description
                 console.log(data);
 
                 console.log("Anil Followers:", data.followers); // Accessing object attributes using dot operator
+
+
+                // --------------------------------------------------------------------------------------------------------------
+                // Assignment Adding card and displaying Api data
+                // document.querySelector('img').setAttribute('src', `${data.avatar_url}`)
+                document.querySelector('img').setAttribute('src', `${data.avatar_url}`)
+                document.querySelector('h1').innerHTML = `${data.name}`;
+                document.querySelector('.title').innerHTML = `Followers : ${data.followers}  Following : ${data.following}`
+                document.querySelector('.username').innerHTML = `Username : ${data.login}`
+                
+                
             }
             
         }
+    
     xhr.send()  // Must require when you use objName.open (Line : 24)
     console.log("here");
+        
+    
+    
+   
 </script>
 </html>
