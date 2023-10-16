@@ -23,18 +23,27 @@ Value	State	            Description
 
     xhr.open('GET', myRequestApi) // Open : Asking our object to GET data from give Api url ---> It won't work until we call xhr.send which sends the data and get the headers and etc data
 
-    xhr.onreadystatechange = () => { // onreadystatechange will keep monitoring and printing the changing of states after requesting data from given url, state numbers and thier info is given above
+        xhr.onreadystatechange = () => { // onreadystatechange will keep monitoring and printing the changing of states after requesting data from given url, state numbers and thier info is given above
 
-        const apiData = xhr.responseText 
-        console.log(xhr.readyState);
-        if(xhr.readyState === 4){
-            console.log("Api Data Received");
-            console.log(typeof apiData); // Most of the time jab bhi api request se response ata hai to vo String type me ata hai, to use objectName.dataname krke access krna muskil rehta hai isliye pehle ham use object me create krenge. 
-            // JSON.parse is similar to changing data into json format or object, directly we cant change data using "Object" Keyword
+            console.log(xhr.readyState); 
+            if(xhr.readyState === 4){
+                const apiData = xhr.responseText // GIVING STRING DATA --> on convert given below
+
+                // Converting to object coz accessign String attributes is hard then accessing object attributes with dot operator
+
+                const data = JSON.parse(xhr.responseText) // OBJECT --> As its giving object response we can fetch attributes of it
+
+                console.log("Api Data Received");
+                console.log(typeof apiData); // STRING --> Most of the time jab bhi api request se response ata hai to vo String type me ata hai, to use objectName.dataname krke access krna muskil rehta hai isliye pehle ham use object me create krenge. 
+                // JSON.parse is similar to changing data into json format or object, directly we cant change data using "Object" Keyword
+                console.log(typeof data); // OBJECT
+                console.log(data);
+
+                console.log("Anil Followers:", data.followers); // Accessing object attributes using dot operator
+            }
+            
         }
-        
-    }
-    xhr.send()
+    xhr.send()  // Must require when you use objName.open (Line : 24)
     console.log("here");
 </script>
 </html>
