@@ -105,37 +105,88 @@ myPromiseFour
     console.log("Promise Four may have been resolved or rejected"); // Promise Four may have been resolved or rejected
   });
 
-
 // -----------------------------------------------------------------------------------------------------------------------
-// Promises with then catch or you can use [async await] --> here we can handle object children using dot operator without chaining response (.then)
+// Promises with then catch OR you can use [async await] --> here we can handle object children using dot operator without chaining response (.then)
 
 // async - await Cons: Directly error handles nahi krte we can handle error by wrapping inside try and catch block
 
-// Creating promise is same like all, but handling them is done with async awai function and later calling that function to run 
+// Creating promise is same like all, but handling them is done with async awai function and later calling that function to run
 
-const myPromiseFive = new Promise((resolve, reject)=>{
-    setTimeout(() => {
-        let myErr = true;
-        if (!myErr) {
-          // Read like this --> if not an error runs this block
-          resolve({ githubUsername: "Rhishikesh12", subscription: "Free" });
-        } else {
-            reject ("Error: Finding Git user")
-        }
-      }, 1000);
-})
-
-
-
-async function handlePromiseFive (){ // we need to call this function in order to run the promise
-    try {
-        const response = await myPromiseFive // Here resolve passed object is fetched and stored in variable
-        console.log(response); // { githubUsername: 'Rhishikesh12', subscription: 'Free' }
-
-        // From personal research we dont need chaining here, we can access object data with dot (.) operator in asynch and await
-        console.log(`Owner name : ${response.githubUsername} and subscription : ${response.subscription}`); //Owner name : Rhishikesh12 and subscription : Free
-    } catch (error) {
-        console.log(error); // Error: Finding Git user --> When promise got rejected due to if statement
+const myPromiseFive = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    let myErr = true;
+    if (!myErr) {
+      // Read like this --> if not an error runs this block
+      resolve({ githubUsername: "Rhishikesh12", subscription: "Free" });
+    } else {
+      reject("Error: Finding Git user");
     }
+  }, 1000);
+});
+
+async function handlePromiseFive() {
+  // we need to call this function in order to run the promise
+  try {
+    const response = await myPromiseFive; // Here resolve passed object is fetched and stored in variable
+    console.log(response); // { githubUsername: 'Rhishikesh12', subscription: 'Free' }
+
+    // From personal research we dont need chaining here, we can access object data with dot (.) operator in asynch and await
+    console.log(
+      `Owner name : ${response.githubUsername} and subscription : ${response.subscription}`
+    ); //Owner name : Rhishikesh12 and subscription : Free
+  } catch (error) {
+    console.log(error); // Error: Finding Git user --> When promise got rejected due to if statement
+  }
 }
-handlePromiseFive()
+handlePromiseFive();
+
+// -----------------------------------------------------------------------------------------------------------------------
+
+//                     WORKING WITH API DATA USING FETCH with both the methods (async, await && then,catch)
+
+// -----------------------------------------------------------------------------------------------------------------------
+
+//----------------------------Works in both Promise - then and catch + async and await functions--------------------------
+// - For accessing object children fetching from an API We can convert the response from string to json and then use dot operator to access the individual data we need.
+
+// Handling Api request with async and await with fetch (fetch return back promise)
+
+async function handleGithubApi() {
+  const response = await fetch("https://api.github.com/users/anildev26");
+  console.log(response); // Promise { <pending> } --> It is going inside pending because it is taking some time to process which can be resolved by passing await before fetch statement
+  /*
+   Before : const myGitApi = fetch('https://api.github.com/users/anildev26')  --> Promise { <pending> }
+   After:    const myGitApi = await fetch('https://api.github.com/users/anildev26') ---> successfull running and returning string response
+   */
+  // Now we need to convert the String response to json
+  const data = await response.json(); // This also takes time which will result in error like above Promise { <pending> }...so to solve it we can add await before converting
+  console.log(data); // Successfully returning the json github api data
+  console.log(data.following); // 6 ---> successfull object children property returned
+}
+
+handleGithubApi(); //Function call is must in async and await
+
+// -----------------------------------------------------------------------------------------------------------------------
+// Handling Api request with fetch (fetch return back promise) and applying .then, .catch in the fetch to get the reponse from fetch
+
+fetch("https://api.github.com/uss/anildev26")
+  .then((response) => {
+    // console.log(response); // response in string
+    // converting to json and returning to chaining .then
+    return response.json();
+  })
+  .then((data) => {
+    // accepting upper then function retured data here
+    console.log(data); // successfully printing the json api data
+    console.log("Account name :", data.name); // Anil Sahu
+  })
+  .catch((error) => {
+    console.log(error);
+    /*
+    When passing the incorrect url in fetch it displays this error otherwise on right url error is not catched
+    {
+        message: 'Not Found',
+        documentation_url: 'https://docs.github.com/rest'
+    }
+    */
+  });
