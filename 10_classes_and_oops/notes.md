@@ -17,7 +17,7 @@ Object literal
 - Instances (new, this)
 
 
-## 4 pillars
+## 4 pillars (self study)
 Abstraction
 Encapsulation
 Inheritance
